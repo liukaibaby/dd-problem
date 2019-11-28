@@ -1,0 +1,13 @@
+后台用的ssh框架往前台钉钉传json中文乱码问题解决在xml文件配置mvc消息转换器代码如下
+ <!-- 解决接口调用 中文乱码问题-->
+    <mvc:annotation-driven >
+        <!-- 消息转换器 -->
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    
+    如果还不行可以看这位大神博客 
+    https://blog.csdn.net/zcouy/article/details/79792190
